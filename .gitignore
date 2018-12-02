@@ -1,0 +1,52 @@
+##
+.vscode/
+
+## Python
+.spyproject/
+*.py[cod]
+
+## Data
+Data/
+GIS/
+
+## TeX
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# gnuplottex
+*-gnuplottex-*
+
+# TikZ & PGF
+*.dpth
+*.md5
+*.auxlock

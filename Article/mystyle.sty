@@ -1,0 +1,46 @@
+\ProvidesPackage{mystyle}
+
+%\pdfminorversion=6
+
+%\usepackage[round]{natbib}
+\usepackage{lineno}
+\usepackage{color}
+%\usepackage{graphicx}
+%\usepackage{epstopdf} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage[inline,shortlabels]{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+%\usepackage{longtable}
+%\renewcommand{\arraystretch}{1.2}
+\usepackage[tableposition=top]{caption}
+\usepackage{url}
+%\usepackage{pdfpages}
+%\renewcommand{\harvardurl}{\url}
+%\usepackage{hyperref}
+\bibliographystyle{elsarticle-harv}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage{pgfplots}
+\usepackage{tikz}
+%\usetikzlibrary{plotmarks}
+%\usepgfplotslibrary{groupplots}
+\definecolor{lightblue}{RGB}{52, 152, 219}
+\definecolor{turquoise}{RGB}{26, 188, 156}
+\definecolor{concrete}{RGB}{149, 165, 166}
+\definecolor{darkorange}{RGB}{211, 84, 0}
+
+\usetikzlibrary{shapes.geometric, arrows, positioning, fit, backgrounds}
+\tikzset{
+	io/.style = {trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=0.5cm, text centered, text width=2.5cm, draw=black, fill=concrete, fill opacity=0.4, text opacity=1, inner sep=4pt},
+	process/.style = {rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, draw=black, inner sep=4pt},
+	decision/.style = {diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30},
+	arrow/.style = {thick,->,>=stealth},
+	title/.style={font=\fontsize{10}{6}\color{black!80}\ttfamily, text centered, text width=7cm},
+}
+%
+%\pgfplotsset{compat=newest}
+%
+%\allowdisplaybreaks
+

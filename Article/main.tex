@@ -1,0 +1,32 @@
+\documentclass[review,authoryear,3p]{elsarticle}
+\usepackage{mystyle}
+
+\begin{document}
+\linenumbers
+\input{./tex/title.tex}
+\input{./tex/abstract.tex}
+\maketitle
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+\input{./tex/introduction.tex}
+\input{./tex/studyarea.tex}
+\input{./tex/method.tex}
+\input{./tex/results.tex}
+\input{./tex/discussion.tex}
+\input{./tex/conclusion.tex}
+
+\section*{Acknowledgments}
+This work is part of the eEcoLiDAR project, eScience infrastructure for Ecological applications of LiDAR point clouds \citep{kissling2017eecolidar}, funded by Netherlands eScience Center (\url{https://www.esciencecenter.nl}).
+
+% Bibliography:
+%\clearpage
+\section*{References}
+\bibliography{./tex/bibliography}
+
+% Appendix:
+% \clearpage
+% \input{./tex/appendix.tex}
+
+\end{document}
