@@ -1,11 +1,11 @@
 \section{Results}
 \subsection{Vegetation classification}
-The vegetation classification resulted in a map showing the different classes (figure \ref{fig:classification}). The data points which were removed during the preprocessing are displayed in grey. This class contains data points that certainly do not contain higher than herb vegetation, as it mainly contains bare soil, grassland and water bodies (compare figure \ref{fig:studyarea}). The blue class represents data points which were not removed during the preprocessing, but were classified as `other' during the supervised classification (mainly building edges, ditches and railroad infrastructure). The green class represents the classified vegetation. The accuracy of this classification is presented in a confusion matrix of predicted versus actual classes (table \ref{tab:confmatclass}). From the confusion matrix a producer’s accuracy of 0.98 for `vegetation' and of 0.85 for `other' was calculated. The AUROCC of 0.98 shows that `vegetation' and `other' class are separated well, which is supported by the MCC of 0.76, indicative of a positive correlation between the predicted and observed classes, and the geometric mean of 0.90.
+The vegetation classification resulted in a map showing three different classes (figure \ref{fig:classification}): points removed during preprocessing (e.g. low-stature vegetation, bare soil, water bodies), points classified as non-tall-vegetation structures (e.g. building edges, ditches and railroad infrastructure) and points belonging to tall vegetation. The accuracy assessment of this classification showed a producer's accuracy of 0.98 for \textit{vegetation} and of 0.85 for \textit{other}. The AUROCC of 0.98 showed that the \textit{vegetation} and \textit{other} class were well separated, and this was also supported by an MCC value of 0.76 (indicating of a positive correlation between the predicted and observed classes) and the geometric mean of 0.90.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth]{./img/classification.pdf}
-	\caption{Results of the vegetation classification. Grey areas represent data points which were removed during the preprocessing, blue represent data points which were not removed during the preprocessing, but classified as non-vegetation (mainly building edges, ditches and railroad infrastructure). Green represents the higher than herb vegetation.}
+	\caption{Results of the vegetation classification. Grey areas represent data points which were removed during the preprocessing (e.g. grasslands, agricultural fields, bare soil, water bodies). Blue represents points which were not removed during the preprocessing, but classified as \textit{other} (mainly building edges, ditches and railroad infrastructure). Green represents points which were not removed during the preprocessing, but classified as tall vegetation.}
 	\label{fig:classification}
 \end{figure}
 
@@ -26,9 +26,14 @@ The vegetation classification resulted in a map showing the different classes (f
 \end{table}
 
 \subsection{Linear object segmentation}
-The vegetation was segmented using our region growing algorithm and the resulting objects were filtered for linearity. We compare the result with our manual segmentation (figure ..). The areas that were correctly classified as linear vegetation objects are shown in light green and the regions that were accurately classified as nonlinear vegetation objects are displayed in dark green. Nonlinear areas that are classified as linear are shown in red and linear regions that are classified as nonlinear are shown in orange.  A confusion matrix is used to quantify the accuracy of the automated segmentation (table \ref{tab:confmatseg}).
+The vegetation was segmented using a region growing algorithm, the resulting objects were filtered for linearity and the results were compared with the manual segmentation (figure \ref{fig:segmentation}). This resulted in areas that were correctly classified as linear vegetation elements (true positives) and the regions that were accurately classified as nonlinear vegetation objects (true negatives). Some nonlinear areas were misclassified as linear (false positives), and some linear regions were classified as nonlinear (false negatives). However, the confusion matrix (table \ref{tab:confmatseg}) showed an overall good accuracy of 0.90, an F1-score of 0.82, and an MCC of 0.76. Hence, the majority of linear vegetation elements were successfully segmented, with user's and producer's accuracies of 0.85 and 0.80, respectively. Non-linear objects were successfully separated well, with user's and producer's accuracies of 0.92 and 0.94, respectively.
 
-.. an overall accuracy of 0.87, F1 scores of 0.77, kappa of 0.70, and MCC of 0.70 respectively. Although there are some obvious errors, the majority of linear woody objects have been successfully segmented, with with user’s and producer’s accuracies of .. and .., respectively. Non-linear objects are successfully separated well, with user’s and producer’s accuracies of 0.90 and 0.93, respectively.
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{./img/segmentation.pdf}
+	\caption{Results of the segmentation of linear elements. The correctly delineated areas are shown in green, where true positive (light green) means correctly classified as a linear element and true negative (dark green) as a nonlinear element. The misclassified areas are shown in red, where false positive (light red) means classified as a linear elements, while actually being a nonlinear element, and false negative (dark red) classified as a nonlinear object, while actually being a linear.}
+	\label{fig:segmentation}
+\end{figure}
 
 %\begin{table}
 %	\caption{Confusion matrix listing the automatically segmented against the manually annotated set of linear and non-linear vegetation objects in area (\(m^{2}\)).}
@@ -56,8 +61,8 @@ The vegetation was segmented using our region growing algorithm and the resultin
 		& & & Linear & Nonlinear & & \\
 		\midrule
 		\parbox[t]{2mm}{\multirow{4}{*}{\rotatebox[origin=c]{90}{\textbf{Actual}}}} & & & & & & \\
-		& Linear & & 1159762 & 23438 & & \\
-		& Nonlinear & & 6416 & 16706 & & \\
+		& Linear & & 116483.76 & 28385.56 & & \\
+		& Nonlinear & & 20201.53 & 336754.65 & & \\
 		& & & & & & \\
 		\bottomrule
 	\end{tabular}
