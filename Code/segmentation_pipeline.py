@@ -55,6 +55,8 @@ print('Growing rectangular regions..')
 t = time.time()
 segments = []
 num_clusters = max(point_cloud['cluster'])
+# TODO add parallel processing to increase performance
+# (each cluster can be segmented completely seperately, thus allowing parallelism)
 for i in range(num_clusters):
     print("{} of {}..".format(i, num_clusters))
     cluster = point_cloud.loc[point_cloud['cluster'] == i]
